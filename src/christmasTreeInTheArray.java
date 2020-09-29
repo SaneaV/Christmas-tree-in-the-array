@@ -22,21 +22,20 @@ public class christmasTreeInTheArray {
 
 		// Loop through the lines of the array.
 		for (int i = 0; i < n; i++) {
-			
-			// Loop to fill the array.
-			for (int j = 0; j < m; j++)
-				// Filling the loop with random numbers from 1 to 10.
-				mas[i][j] = String.valueOf((int) (1 + Math.random() * 9));
 
-			// Loop to fill the array with x values 
-			for (int j = m - n - i; j <= m - n + i; j++)
-				mas[i][j] = "x";
+			for (int j = 0; j < m; j++) {
+				// Filling the array with x values
+				if (j >= m - n - i && j <= m - n + i)
+					mas[i][j] = "x";
+				else
+					// Filling the loop with random numbers from 1 to 10.
+					mas[i][j] = String.valueOf((int) (1 + Math.random() * 9));
 
-			// Outputting an array to the console
-			for (int j = 0; j < m; j++)
+				//Outputting of the array in console
 				System.out.print(mas[i][j] + " ");
+			}
 			System.out.println("");
 		}
-	}
 
+	}
 }
